@@ -1,0 +1,29 @@
+version: '3'
+
+volumes:
+  laravel_api-mysql-data:
+    driver: local
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - ./storage/app/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: dbo
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8000:8080"
+    links:
+      - mysql
