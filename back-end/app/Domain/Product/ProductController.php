@@ -2,9 +2,11 @@
 
 namespace App\Domain\Product;
 
-use App\Domain\Product\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailUser;
+use App\Domain\User\User;
 
 class ProductController extends Controller
 {
@@ -78,5 +80,11 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         return response(null, 204);
+    }
+
+    public function processArquivo(Request $request)
+    {
+        $user = User::whereNotNull('id')->first();
+        Mail::to($user->email)->send(new SendMailUser());
     }
 }
