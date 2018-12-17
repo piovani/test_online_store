@@ -60,7 +60,7 @@ class ProductService
 
         $file->storeAs('import', $import->id . '.csv');
 
-//        ProcessImportProduct::dispatch($import);
+        ProcessImportProduct::dispatch($import);
 
         return $import;
     }
