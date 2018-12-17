@@ -13,7 +13,8 @@ class UserSeeder extends Seeder
     {
         factory(\App\Domain\User\User::class)->create([
             'login' => 'adm',
-            'password' => 'adm'
+            'password' => 'adm',
+            'email' => 'teste@teste.com',
         ]);
     }
 }

@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         factory(\App\Domain\Category\Category::class)->create([
-            'description' => 'watches'
+            'description' => 'watches',
         ]);
     }
 }

@@ -5,7 +5,10 @@ namespace App\Jobs;
 use App\Domain\Category\Category;
 use App\Domain\Product\Import\Import;
 use App\Domain\Product\Product;
+use App\Domain\User\User;
+use App\Mail\SendMailUser;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -67,6 +70,9 @@ class ProcessImportProduct implements ShouldQueue
         $this->import->processed = true;
         $this->import->processed_date = Carbon::now()->toDateTimeString();
         $this->import->save();
+
+        $user = User::find($this->import->user_id);
+        Mail::to($user->email)->send(new SendMailUser());
     }
 
     private function _formatValue($num)

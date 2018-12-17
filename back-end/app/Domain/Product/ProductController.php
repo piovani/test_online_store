@@ -84,6 +84,5 @@ class ProductController extends Controller
         $products = ProductService::salvar($request->file('file'));
 
         return response($products, 201);
-//        Mail::to($user->email)->send(new SendMailUser());
     }
 }
