@@ -60,7 +60,8 @@ class ProductService
 
         $file->storeAs('import', $import->id . '.csv');
 
-        ProcessImportProduct::dispatch($import);
+        ProcessImportProduct::dispatch($import)
+            ->delay(now()->addMinute(5));
 
         return $import;
     }

@@ -76,10 +76,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $product->delete();
+
         return response(null, 204);
     }
 
-    public function processArquivo(Request $request)
+    public function processFile(Request $request)
     {
         $products = ProductService::salvar($request->file('file'));
 
