@@ -26,4 +26,6 @@
 
 ## 3 - Product import test
 
-- 
+- the sample csv file is in the root of the storage folder
+
+- if you are only testing the API, you need to put the 'File' key when integrating the file into the request
