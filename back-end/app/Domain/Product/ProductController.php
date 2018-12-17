@@ -4,9 +4,6 @@ namespace App\Domain\Product;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\SendMailUser;
-use App\Domain\User\User;
 
 class ProductController extends Controller
 {
@@ -84,7 +81,9 @@ class ProductController extends Controller
 
     public function processArquivo(Request $request)
     {
-        $user = User::whereNotNull('id')->first();
-        Mail::to($user->email)->send(new SendMailUser());
+        $products = ProductService::salvar($request->file('file'));
+
+        return response($products, 201);
+//        Mail::to($user->email)->send(new SendMailUser());
     }
 }

@@ -2,7 +2,11 @@
 
 namespace App\Domain\Product;
 
+use App\Jobs\ProcessImportProduct;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use JWTAuth;
+use App\Domain\Product\Import\Import;
 
 class ProductService
 {
@@ -43,5 +47,21 @@ class ProductService
             'sub_name' => 'required|min:1|max:255',
             'price' => 'required|float',
         ]);
+    }
+
+    public static function salvar(UploadedFile $file)
+    {
+        $user = JWTAuth::toUser(JWTAuth::getToken());
+
+        $import = new Import();
+        $import->name = $file->getClientOriginalName();
+        $import->user_id = $user->id;
+        $import->save();
+
+        $file->storeAs('import', $import->id . '.csv');
+
+//        ProcessImportProduct::dispatch($import);
+
+        return $import;
     }
 }
