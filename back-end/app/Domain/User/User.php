@@ -10,7 +10,7 @@ class User extends Authenticatable implements JWTSubject
     public $incrementing = false;
 
     protected $fillable = [
-        'login', 'password',
+        'password',
     ];
 
     protected $hidden = [

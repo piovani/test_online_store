@@ -8,9 +8,9 @@ use Exception;
 
 class AuthService
 {
-    public function gerarToken($login, $password)
+    public function gerarToken($email, $password)
     {
-        $user = User::where('login', $login)->first();
+        $user = User::where('email', $email)->first();
 
         if (!$user) {
             throw new Exception('User not fount');

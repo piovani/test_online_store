@@ -8,7 +8,7 @@ $factory->define(\App\Domain\User\User::class, function (Faker $faker) {
 
     return [
         'id' => $faker->uuid(),
-        'login' => $faker->word(),
+        'email' => $faker->email(),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];

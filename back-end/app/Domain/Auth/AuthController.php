@@ -18,11 +18,11 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         try {
-            $token = $this->service->gerarToken($request->login, $request->password);
+            $token = $this->service->gerarToken($request->email, $request->password);
 
             return response(compact('token'));
         } catch (Exception $e) {
-            return response(['Login and/or password incorrect'], 401);
+            return response(['Email and/or password incorrect'], 401);
         }
     }
 

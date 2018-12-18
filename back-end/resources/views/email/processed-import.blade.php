@@ -52,7 +52,7 @@
 <body>
 <div class="flex-center position-ref full-height">
     <div class="content">
-        <h4>Import file was imported successfully.</h4>
+        <h4>Your import was completed.</h4>
     </div>
 </div>
 </body>

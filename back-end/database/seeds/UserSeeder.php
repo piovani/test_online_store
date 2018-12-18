@@ -12,9 +12,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         factory(\App\Domain\User\User::class)->create([
-            'login' => 'adm',
+            'email' => 'adm@adm.com',
             'password' => 'adm',
-            'email' => 'teste@teste.com',
         ]);
     }
 }
