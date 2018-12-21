@@ -20,22 +20,21 @@
 <script>
 import Toolbar from '@/components/Toolbar/Toolbar'
 import Footer from '@/components/Footer/Footer'
-dasdasd
+
 export default {
   components: {
     Toolbar,
     Footer
   },
-  create() {
-    console.log(this.items)
+  created () {
   },
   data: () => ({
     items: [
       {
-        foto: 'static/relogio.jpg'
+        foto: './static/relogio.jpg'
       },
       {
-        foto: 'static/relogio.jpg'
+        foto: './static/relogio.jpg'
       }
     ]
   })

@@ -11,8 +11,16 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Domain\Category\Category::class)->create([
-            'description' => 'watches',
-        ]);
+        $data = [
+            'watches for man',
+            'watches for woman',
+            'outhers',
+        ];
+
+        foreach ($data as $item) {
+            factory(\App\Domain\Category\Category::class)->create([
+                'description' => $item,
+            ]);
+        }
     }
 }
