@@ -46,7 +46,7 @@
       v-spacer
       v-btn.xs2(
         align-end
-        href="/login"
+        href="#/login"
         flat
       ) Admin Area
 </template>
