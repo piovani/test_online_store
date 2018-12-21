@@ -77,10 +77,12 @@ export default {
   methods: {
     login () {
       if (!this.$refs.form.validate()) return
-      LoginService.login(this.payload).then((body) => {
-        console.log('SIM')
-      }).catch(() => {
-        console.log('NAO')
+      LoginService.login(this.payload).then((response) => {
+        console.log(response.data.token)
+        LoginService.saveToken(response.data.token)
+        this.$router.push('/home')
+      }).catch((err) => {
+        console.log(err.response.data)
       })
     }
   }

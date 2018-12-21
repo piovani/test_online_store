@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem('local')
+  const token = localStorage.getItem('token-app')
   if (token) {
     /* eslint-disable no-param-reassign */
     config.headers.common.AuthorizationToken = token
