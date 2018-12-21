@@ -9,7 +9,7 @@
           href="/"
           default
           flat
-        ) 
+        )
           v-img(
             src="./static/vintage/Captura de tela de 2018-12-18 01-02-31.png"
             width="100"
@@ -46,8 +46,8 @@
       v-spacer
       v-btn.xs2(
         align-end
-        color="white"
         href="/login"
+        flat
       ) Admin Area
 </template>
 
