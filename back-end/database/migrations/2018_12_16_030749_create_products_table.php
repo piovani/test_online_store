@@ -19,7 +19,17 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('sub_name');
             $table->float('price');
-            $table->string('image')
+
+            $table->string('image1')
+                ->nullable();
+
+            $table->string('image2')
+                ->nullable();
+
+            $table->string('image3')
+                ->nullable();
+
+            $table->string('image4')
                 ->nullable();
 
             $table->uuid('category_id');

@@ -20,6 +20,7 @@
 <script>
 import Toolbar from '@/components/Toolbar/Toolbar'
 import Footer from '@/components/Footer/Footer'
+import HomeService from './HomeService'
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     Footer
   },
   created () {
+    this.getItems()
   },
   data: () => ({
     items: [
@@ -37,6 +39,16 @@ export default {
         foto: './static/relogio.jpg'
       }
     ]
-  })
+  }),
+  methods: {
+    getItems() {
+      HomeService.getItems()
+      .then((response) => {
+        console.log(this.items);
+        this.items = response.data
+        console.log(this.items);
+      })
+    }
+  }
 }
 </script>
