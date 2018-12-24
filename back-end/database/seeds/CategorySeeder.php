@@ -12,8 +12,8 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $data = [
-            'watches for man',
-            'watches for woman',
+            'man',
+            'woman',
             'outhers',
         ];
 

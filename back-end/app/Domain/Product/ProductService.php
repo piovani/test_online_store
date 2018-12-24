@@ -2,6 +2,7 @@
 
 namespace App\Domain\Product;
 
+use App\Domain\Category\Category;
 use App\Jobs\ProcessImportProduct;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -64,5 +65,21 @@ class ProductService
             ->delay(now()->addMinute(5));
 
         return $import;
+    }
+
+    public static function category($count = 1)
+    {
+        $result = [];
+        $categories = Category::all();
+
+        foreach ($categories as $category) {
+            $product = Product::where('category_id', $category->id)
+                ->limit($count)
+                ->get();
+
+            $result = array_merge($result, $product->toArray());
+        }
+
+        return $result;
     }
 }

@@ -87,4 +87,11 @@ class ProductController extends Controller
 
         return response($products, 201);
     }
+
+    public function home()
+    {
+        $products = ProductService::category(9);
+
+        return response($products, 200);
+    }
 }

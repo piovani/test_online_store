@@ -12,6 +12,12 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        factory(Product::class, 5)->create();
+        $categories = \App\Domain\Category\Category::all();
+
+        foreach ($categories as $category) {
+            factory(Product::class, 5)->create([
+                'category_id' => $category->id
+            ]);
+        }
     }
 }
