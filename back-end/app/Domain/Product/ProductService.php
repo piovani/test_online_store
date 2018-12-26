@@ -73,11 +73,11 @@ class ProductService
         $categories = Category::all();
 
         foreach ($categories as $category) {
-            $product = Product::where('category_id', $category->id)
+            $products = Product::where('category_id', $category->id)
                 ->limit($count)
                 ->get();
 
-            $result = array_merge($result, $product->toArray());
+            $result = array_merge($result, $products->toArray());
         }
 
         return $result;

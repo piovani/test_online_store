@@ -9,10 +9,11 @@
       v-img(
         src="./static/home/featured-for-man.png"
       )
-      v-carrousel-item(
-        v-for="(item,i) in items"
-        :key="i"
-        :src="item.foto"
+      v-card(v-for="(tipo, index) in categorias")
+        v-card dasd
+    v-card
+      v-img(
+        src="./static/home/featured-for-woman.png"
       )
     Footer
 </template>
@@ -31,22 +32,14 @@ export default {
     this.getItems()
   },
   data: () => ({
-    items: [
-      {
-        foto: './static/relogio.jpg'
-      },
-      {
-        foto: './static/relogio.jpg'
-      }
-    ]
+    items: [],
+    categories: [],
   }),
   methods: {
     getItems() {
       HomeService.getItems()
       .then((response) => {
-        console.log(this.items);
         this.items = response.data
-        console.log(this.items);
       })
     }
   }

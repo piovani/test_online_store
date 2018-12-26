@@ -80,7 +80,7 @@ export default {
       LoginService.login(this.payload).then((response) => {
         console.log(response.data.token)
         LoginService.saveToken(response.data.token)
-        this.$router.push('/home')
+        this.$router.push('/admin')
       }).catch((err) => {
         console.log(err.response.data)
       })
