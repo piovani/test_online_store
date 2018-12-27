@@ -24,7 +24,7 @@
 export default {
   data: () => ({
     items: [
-      {title: 'PRODUCTS', path: '/admin'},
+      {title: 'PRODUCTS', path: '/admin/productList'},
       {title: 'ORDERS'},
       {title: 'CUSTOMERS'},
       {title: 'ANALYTICS'},

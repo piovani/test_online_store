@@ -19,8 +19,8 @@ export default class Service {
     return http.post(`${this.baseUrl}`, item)
   }
 
-  edit (item) {
-    return http.put(`${this.baseUrl}/${item.id}`, item)
+  edit (id, item) {
+    return http.put(`${this.baseUrl}/${id}`, item)
   }
 
   delete (id) {

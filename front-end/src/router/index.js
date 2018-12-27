@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Home from '@/app/Home/Home'
 import 'vuetify/dist/vuetify.min.css'
 import Login from '@/app/Login/Login'
-import Admin from '@/app/Admin/Admin'
+import AdminProductList from '@/app/Admin/Products/ProductList'
+import AdminProductForm from '@/app/Admin/Products/ProductForm'
 import VueSweetalert2 from 'vue-sweetalert2'
 
 Vue.use(Router)
@@ -22,9 +23,19 @@ export default new Router({
       component: Login
     },
     {
-      path: '/admin',
-      name: 'Admin',
-      component: Admin
+      path: '/admin/productList',
+      name: 'AdminProductList',
+      component: AdminProductList
+    },
+    {
+      path: '/admin/ProductForm',
+      name: 'AdminProductForm',
+      component: AdminProductForm
+    },
+    {
+      path: '/admin/ProductForm/:id',
+      name: 'AdminProductForm',
+      component: AdminProductForm
     }
   ]
 })

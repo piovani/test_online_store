@@ -78,9 +78,8 @@ export default {
     login () {
       if (!this.$refs.form.validate()) return
       LoginService.login(this.payload).then((response) => {
-        console.log(response.data.token)
         LoginService.saveToken(response.data.token)
-        this.$router.push('/admin')
+        this.$router.push('/admin/productList')
       }).catch((err) => {
         console.log(err.response.data)
       })

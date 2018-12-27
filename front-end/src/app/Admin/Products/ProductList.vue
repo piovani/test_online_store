@@ -1,59 +1,77 @@
 <template lang="pug">
   products-list
-    v-card
-      v-layout(row)
-        v-flex(xs6)
-          v-btn(
-            color="blue"
-            round
-            dark
-          ) ADD PRODUCT
-          v-btn(
-            color="blue"
-            round
-            dark
-          ) IMPORT PRODUCT
-        v-flex(offset-xs2)
-          v-text-field( 
-            v-model="pagination.search"
-            append-icon="search"
-            label="Search"
-            single-line
-            hide-details
+    ToolbarAdminTop
+    v-layout(xs12)
+      v-flex(xs3 md2)
+        ToolbarAdminSide
+      v-flex(xs11 md12)
+        v-card
+          v-layout(row)
+            v-flex(xs6)
+              v-btn(
+                color="blue"
+                round
+                dark
+                href="#/admin/ProductForm"
+              ) ADD PRODUCT
+              v-btn(
+                color="blue"
+                round
+                dark
+              ) IMPORT PRODUCT
+            v-flex(offset-xs2)
+              v-text-field(
+                v-model="pagination.search"
+                append-icon="search"
+                label="Search"
+                single-line
+                hide-details
+              )
+          v-data-table(
+            :headers="headers"
+            :items="products"
+            :pagination.sync="pagination"
+            :total-items="pagination.totalItems"
+            :rows-per-page-items="[10]"
+            :search="pagination.search"
           )
-      v-data-table(
-        :headers="headers"
-        :items="products"
-        :pagination.sync="pagination"
-        :total-items="pagination.totalItems"
-        :rows-per-page-items="[10]"
-        :search="pagination.search"
-      )
-        template(
-          slot="items"
-          slot-scope="props"
-        )
-          td {{ props.item.name }}
-          td {{ props.item.sub_name }}
-          td {{ props.item.price }}
-          td
-            v-btn(
-              color="blue"
-              round
-              dark
-            ) EDIT
-            v-btn(
-              dark
-              round
-              color="red"
-              @click="confirmDeleteProduct(props.item.id)"
-            ) DELETE
+            template(
+              slot="items"
+              slot-scope="props"
+            )
+              td {{ props.item.name }}
+              td {{ props.item.sub_name }}
+              td {{ props.item.price }}
+              td
+                v-btn(
+                  color="blue"
+                  round
+                  dark
+                  @click="callEditProduct(props.item.id)"
+                ) EDIT
+                v-btn(
+                  dark
+                  round
+                  color="red"
+                  @click="confirmDeleteProduct(props.item.id)"
+                ) DELETE
+    v-footer(fixed)
+      v-flex
+        v-card-actions.justify-center 2018 Vintage - All rights reserved
 </template>
 
 <script>
 import ProductService from './ProductAdminService.js'
+import ToolbarAdminTop from '../Toolbar/ToolbarAdminTop'
+import ToolbarAdminSide from '../Toolbar/ToolbarAdminSide'
+import ProductForm from './ProductForm'
 
 export default {
+  components: {
+    ToolbarAdminTop,
+    ToolbarAdminSide,
+    ProductForm
+  },
   created () {
     this.getHeaders()
     this.getProduts()
@@ -101,11 +119,14 @@ export default {
             type: 'error'
           })
         })
+    },
+    callEditProduct (id) {
+      this.$router.push(`/admin/ProductForm/${id}`)
     }
   },
   watch: {
     pagination () {
-      this.getProduts() 
+      this.getProduts()
     }
   }
 }
