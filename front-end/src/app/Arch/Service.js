@@ -1,29 +1,29 @@
 import http from './http'
 
 export default class Service {
-  constructor(baseUrl) {
-    this.baseUrl = baseUrl;
+  constructor (baseUrl) {
+    this.baseUrl = baseUrl
   }
 
-  get(id) {
-    return http.get(`${this.baseUrl}/${id}`);
+  get (id) {
+    return http.get(`${this.baseUrl}/${id}`)
   }
 
-  getList(params = {}) {
+  getList (params = {}) {
     return http.get(`${this.baseUrl}`, {
       params
-    });
+    })
   }
 
-  save(item) {
-    return http.post(`${this.baseUrl}`, item);
+  save (item) {
+    return http.post(`${this.baseUrl}`, item)
   }
 
-  edit(item) {
-    return http.put(`${this.baseUrl}/${item.id}`, item);
+  edit (item) {
+    return http.put(`${this.baseUrl}/${item.id}`, item)
   }
 
-  delete(id) {
-    return http.delete(`${this.baseUrl}/${id}`);
+  delete (id) {
+    return http.delete(`${this.baseUrl}/${id}`)
   }
 }

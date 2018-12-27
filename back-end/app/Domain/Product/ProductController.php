@@ -21,7 +21,9 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::paginate($request->get('perPage') ?: 10);
+        $products = $this
+            ->service
+            ->getList($request);
 
         return response($products);
     }

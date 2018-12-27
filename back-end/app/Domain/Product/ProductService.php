@@ -15,7 +15,7 @@ class ProductService
     {
         return ProductFilter
             ::seach($request->search)
-            ->paginate($request->pérPage ?: 15);
+            ->paginate($request->perPage ?: 10);
     }
 
     public function store(Request $request)

@@ -33,12 +33,11 @@ export default {
   },
   data: () => ({
     items: [],
-    categories: [],
+    categories: []
   }),
   methods: {
-    getItems() {
-      HomeService.getItems()
-      .then((response) => {
+    getItems () {
+      HomeService.getItems().then((response) => {
         this.items = response.data
       })
     }

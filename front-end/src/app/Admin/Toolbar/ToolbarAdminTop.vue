@@ -3,7 +3,7 @@
     v-toolbar
       v-toolbar-title
         v-btn.xs2(
-          href="#/home"
+          href="/"
           default
           flat
         )
