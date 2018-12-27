@@ -37,6 +37,8 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('categories');
 
+            $table->text('description');
+
             $table->timestamps();
             $table->softDeletes();
         });

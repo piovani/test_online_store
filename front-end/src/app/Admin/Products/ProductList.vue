@@ -1,5 +1,5 @@
 <template lang="pug">
-  products-admin
+  products-list
     v-card
       v-layout(row)
         v-flex(xs6)
@@ -105,12 +105,8 @@ export default {
   },
   watch: {
     pagination () {
-      this.getProduts()
+      this.getProduts() 
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

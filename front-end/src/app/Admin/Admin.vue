@@ -5,7 +5,8 @@
       v-flex(xs3 md2)
         ToolbarAdminSide
       v-flex(xs11 md12)
-        ProductAdmin
+        ProductForm
+        //- ProductList
     v-footer(fixed)
       v-flex
         v-card-actions.justify-center 2018 Vintage - All rights reserved
@@ -14,13 +15,14 @@
 <script>
 import ToolbarAdminTop from './Toolbar/ToolbarAdminTop'
 import ToolbarAdminSide from './Toolbar/ToolbarAdminSide'
-import ProductAdmin from './Products/Product'
+import ProductList from './Products/ProductList'
+import ProductForm from './Products/ProductForm'
 
 export default {
   components: {
     ToolbarAdminTop,
     ToolbarAdminSide,
-    ProductAdmin
+    ProductForm
   }
 }
 </script>

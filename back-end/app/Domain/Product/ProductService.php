@@ -24,9 +24,13 @@ class ProductService
 
         $product = factory(Product::class)->create();
         $product->name = $request->name;
-        $product->sub_name = $request->sub_name;
+        $product->sub_name = $request->subName;
         $product->price = $request->price;
-        $product->image = $request->image;
+        $product->description = $request->description;
+        $product->image1 = $request->image1;
+        $product->image2 = $request->image2;
+        $product->image3 = $request->image3;
+        $product->image4 = $request->image4;
         $product->save();
     }
 
@@ -38,6 +42,7 @@ class ProductService
         $product->sub_name = $request->sub_name;
         $product->price = $request->price;
         $product->image = $request->image;
+
         $product->save();
     }
 
@@ -45,8 +50,9 @@ class ProductService
     {
         return $request->validate([
             'name' => 'required|min:1|max:255',
-            'sub_name' => 'required|min:1|max:255',
-            'price' => 'required|float',
+            'subName' => 'required|min:1|max:255',
+            'price' => 'required',
+            'description' => 'required',
         ]);
     }
 

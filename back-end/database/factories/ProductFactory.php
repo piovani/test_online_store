@@ -10,5 +10,6 @@ $factory->define(App\Domain\Product\Product::class, function (Faker $faker) {
         'sub_name' => $faker->name,
         'price' => $faker->randomFloat(2, 0, 10000),
         'category_id' => $category_id ?? Category::inRandomOrder()->first()->id,
+        'description' => $faker->text(255),
     ];
 });
