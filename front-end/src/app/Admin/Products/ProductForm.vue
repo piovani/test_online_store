@@ -79,11 +79,13 @@
 import ProductAdminService from './ProductAdminService'
 import ToolbarAdminTop from '../Toolbar/ToolbarAdminTop'
 import ToolbarAdminSide from '../Toolbar/ToolbarAdminSide'
+import ModalImport from './importCSV/ModalImportCSV'
 
 export default {
   components: {
     ToolbarAdminTop,
-    ToolbarAdminSide
+    ToolbarAdminSide,
+    ModalImport
   },
   created () {
     this.setId()
@@ -166,7 +168,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -42,16 +42,16 @@ class ProcessImportProduct implements ShouldQueue
         $contents = Storage::get(sprintf('import/%s.csv', $this->import->id));
 
         $lines = collect(explode(PHP_EOL, $contents));
-        $headers = explode(',', $lines->shift());
+        $headers = explode(';', $lines->shift());
 
         $data = $lines
             ->filter(function ($line) use ($headers) {
-                $columns = explode(',', $line);
+                $columns = explode(';', $line);
 
                 return count($columns) == count($headers);
             })
             ->map(function ($line) use ($headers) {
-                $columns = explode(',', $line);
+                $columns = explode(';', $line);
 
                 $formatedData = array_combine($headers, $columns);
                 $formatedData['PRICE'] = $this->_formatValue($formatedData['PRICE']);
@@ -64,7 +64,10 @@ class ProcessImportProduct implements ShouldQueue
                     'name' => $data['NAME'],
                     'sub_name' => $data['SUB_NAME'],
                     'price' => $data['PRICE'],
+                    'category_id' => $category->id,
                 ]);
+
+                $product->save();
             });
 
         $this->import->processed = true;

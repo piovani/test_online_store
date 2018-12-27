@@ -14,11 +14,7 @@
                 dark
                 href="#/admin/ProductForm"
               ) ADD PRODUCT
-              v-btn(
-                color="blue"
-                round
-                dark
-              ) IMPORT PRODUCT
+              ModalImport
             v-flex(offset-xs2)
               v-text-field(
                 v-model="pagination.search"
@@ -65,12 +61,14 @@ import ProductService from './ProductAdminService.js'
 import ToolbarAdminTop from '../Toolbar/ToolbarAdminTop'
 import ToolbarAdminSide from '../Toolbar/ToolbarAdminSide'
 import ProductForm from './ProductForm'
+import ModalImport from './importCSV/ModalImportCSV'
 
 export default {
   components: {
     ToolbarAdminTop,
     ToolbarAdminSide,
-    ProductForm
+    ProductForm,
+    ModalImport
   },
   created () {
     this.getHeaders()
