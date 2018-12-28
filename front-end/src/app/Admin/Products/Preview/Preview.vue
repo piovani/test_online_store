@@ -16,7 +16,7 @@
               )
             v-flex(xs6)
               v-card-text
-                .subTitle {{ item.sub_name }}  
+                .subTitle {{ item.sub_name }}
                 .titleProduct {{ item.name }}
                 .price $ {{ formatValue(item.price)  }}
                 input.quantity(
@@ -32,18 +32,22 @@
     #spacer
     v-flex(xs12)
       Off
+    v-flex(xs12)
+      Footer
 </template>
 
 <script>
 import Toolbar from '@/components/Toolbar/Toolbar'
 import FormatValue from '@/Mixins/FormatValue'
 import Off from '@/app/Home/Off/Off'
+import Footer from '@/components/Footer/Footer.vue'
 
 export default {
   mixins: [FormatValue],
   components: {
     Toolbar,
-    Off
+    Off,
+    Footer
   },
   data: () => ({
     quantity: 1,

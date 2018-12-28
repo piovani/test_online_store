@@ -7,7 +7,9 @@ import Theme from '@//app/Arch/Theme'
 
 Vue.config.productionTip = false
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  iconfont: 'mdi'
+})
 Vue.use(Theme)
 
 /* eslint-disable no-new */

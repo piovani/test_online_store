@@ -1,4 +1,4 @@
-import http from "@/app/Arch/http"
+import http from '@/app/Arch/http'
 import Service from '@/app/Arch/Service'
 
 class ProductAdminService extends Service {
@@ -8,7 +8,7 @@ class ProductAdminService extends Service {
 
   importProduct (payload) {
     console.log(payload)
-    return http.post("api/import-product", payload);
+    return http.post('api/import-product', payload)
   }
 
   getHeaders () {

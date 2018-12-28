@@ -79,8 +79,8 @@ export default {
       this.file = event.target.files[0]
     },
     clearFields () {
-      this.valid = false,
-      this.modal = false,
+      this.valid = false
+      this.modal = false
       this.file = null
     }
   }
