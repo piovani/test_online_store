@@ -1,21 +1,27 @@
-# front-end
+# Procedures to start the project
 
-> A Vue.js project
+## 1 - make sure you have these programs installed on your machine
 
-## Build Setup
+- Node.js (8.11.4^)
 
-``` bash
-# install dependencies
+- NPM (5.8.0)
+
+## 2 - Install the system packages
+
+  Just run the command below on your terminal with the project directory open
+
+```
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 3 - Run the system
+
+  On the terminal run the command below
+
+```
+npm run dev
+```
+
+## 4 - Using the system
+
+  Once you're done, it will open your main browser on port 8080 with the project running

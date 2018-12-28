@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "b7bf1894-db89-455f-89ce-e40025b3d311",
+		"name": "teste_online_store_colletion_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU4MTA4OTAsImV4cCI6MTU0NTg5NzI5MCwibmJmIjoxNTQ1ODEwODkwLCJqdGkiOiJpcUdTZlc5d1ZKNDJjV0xOIiwic3ViIjoiYmZmYmU2ZDQtMzdiYy0zNTFhLWE1YjMtY2M2YjkyMTVhNmViIiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.kriEFEVNPqcQ4o3XXbj9Ee7vLqekUF0NVN5A344B77M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/product?perPage=10&page=2&seach=black",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "seach",
+									"value": "black"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU4ODk4NjAsImV4cCI6MTU0NTk3NjI2MCwibmJmIjoxNTQ1ODg5ODYwLCJqdGkiOiJrRXFLcDJ5TDUzQzhJM0RYIiwic3ViIjoiYmZmYmU2ZDQtMzdiYy0zNTFhLWE1YjMtY2M2YjkyMTVhNmViIiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.q-SastmJ4FGZz11CiYll1TT_lbSzfl78BhAODCWnU9E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"teste\",\n\t\"subName\": \"sub teste\",\n\t\"price\": 520.25,\n\t\"description\": \"jsdhjhsajdhaskhdjsha\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/product?",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "seach",
+									"value": "black",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU5MDYyOTIsImV4cCI6MTU0NTk5MjY5MiwibmJmIjoxNTQ1OTA2MjkyLCJqdGkiOiI0Sm13a3JKNm9WaEZjMEVWIiwic3ViIjoiNjc4Yjc3ZTAtOTM1Ny0zZjU4LWJmZmYtM2ZhNDhkZWYzOWI1IiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.BTmtxv67RgwT_YdrsuyF2Wu_rw_MsY-dOKFbOrYwWZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/product/18fe6c0c-e56f-392e-81a0-2c8b300e565b",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"18fe6c0c-e56f-392e-81a0-2c8b300e565b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU4ODk4NjAsImV4cCI6MTU0NTk3NjI2MCwibmJmIjoxNTQ1ODg5ODYwLCJqdGkiOiJrRXFLcDJ5TDUzQzhJM0RYIiwic3ViIjoiYmZmYmU2ZDQtMzdiYy0zNTFhLWE1YjMtY2M2YjkyMTVhNmViIiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.q-SastmJ4FGZz11CiYll1TT_lbSzfl78BhAODCWnU9E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"teste\",\n\t\"subName\": \"sub teste\",\n\t\"price\": 520.25,\n\t\"description\": \"jsdhjhsajdhaskhdjsha\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/product/ec0ab2fe-788c-36ab-ae17-395e4481694d?",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"ec0ab2fe-788c-36ab-ae17-395e4481694d"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "seach",
+									"value": "black",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU4MTA4OTAsImV4cCI6MTU0NTg5NzI5MCwibmJmIjoxNTQ1ODEwODkwLCJqdGkiOiJpcUdTZlc5d1ZKNDJjV0xOIiwic3ViIjoiYmZmYmU2ZDQtMzdiYy0zNTFhLWE1YjMtY2M2YjkyMTVhNmViIiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.kriEFEVNPqcQ4o3XXbj9Ee7vLqekUF0NVN5A344B77M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/product/4e21849c-7c50-3f7d-a6e2-5f9b2b498421",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"4e21849c-7c50-3f7d-a6e2-5f9b2b498421"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import CSV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgiLCJpYXQiOjE1NDU5MDYyOTIsImV4cCI6MTU0NTk5MjY5MiwibmJmIjoxNTQ1OTA2MjkyLCJqdGkiOiI0Sm13a3JKNm9WaEZjMEVWIiwic3ViIjoiNjc4Yjc3ZTAtOTM1Ny0zZjU4LWJmZmYtM2ZhNDhkZWYzOWI1IiwicHJ2IjoiOTY5ZDcyZGU2YjQxNDNlZjE0NjYxODkxMTE2NTg2ZGI2NjUwOWQ2NSJ9.BTmtxv67RgwT_YdrsuyF2Wu_rw_MsY-dOKFbOrYwWZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/import-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"import-product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/category",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"adm@adm.com\",\n\t\"password\": \"adm\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/api/product/home",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"home"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

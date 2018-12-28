@@ -29,3 +29,13 @@
 - the sample csv file is in the root of the storage folder
 
 - if you are only testing the API, you need to put the 'File' key when integrating the file into the request
+
+## Optional
+
+- At the root of the project we have a file calledd:
+
+```
+teste_online_store_colletion_postman.postman_collection.json
+```
+
+- It's a POSTMAN colletion, just import it into your POSTMAN and you can test the routes quickly

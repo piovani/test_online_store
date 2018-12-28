@@ -9,7 +9,6 @@
       v-img(
         src="./static/home/featured-for-man.png"
       )
-    Carousel
     v-card
       v-img(
         src="./static/home/featured-for-woman.png"
@@ -21,25 +20,26 @@
 import Toolbar from '@/components/Toolbar/Toolbar'
 import Footer from '@/components/Footer/Footer'
 import HomeService from './HomeService'
-import Carousel from './Carousel'
+import CardProduct from '@/app/Admin/Products/CardProduct/CardProduct'
 
 export default {
   components: {
     Toolbar,
     Footer,
-    Carousel
+    CardProduct
   },
   created () {
-    this.getItems()
+    this.getProducts()
   },
   data: () => ({
-    items: [],
-    categories: []
+    forMan: [],
+    forWoman: []
   }),
   methods: {
-    getItems () {
-      HomeService.getItems().then((response) => {
-        this.items = response.data
+    getProducts () {
+      HomeService.getItems().then(({ data }) => {
+        this.forMan = data.man
+        this.forWoman = data.woman
       })
     }
   }
