@@ -9,8 +9,7 @@
       v-img(
         src="./static/home/featured-for-man.png"
       )
-      v-card(v-for="(tipo, index) in categorias")
-        v-card dasd
+    Carousel
     v-card
       v-img(
         src="./static/home/featured-for-woman.png"
@@ -22,11 +21,13 @@
 import Toolbar from '@/components/Toolbar/Toolbar'
 import Footer from '@/components/Footer/Footer'
 import HomeService from './HomeService'
+import Carousel from './Carousel'
 
 export default {
   components: {
     Toolbar,
-    Footer
+    Footer,
+    Carousel
   },
   created () {
     this.getItems()

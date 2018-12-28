@@ -79,16 +79,16 @@ class ProductService
 
     public static function category($count = 1)
     {
-        $result = [];
-        $categories = Category::all();
+        $categoryMan = Category::where('description', 'man')->first();
+        $categoryWoman = Category::where('description', 'woman')->first();
 
-        foreach ($categories as $category) {
-            $products = Product::where('category_id', $category->id)
-                ->limit($count)
-                ->get();
+        $result['man'] = Product::where('category_id', $categoryMan->id)
+            ->limit($count)
+            ->get();
 
-            $result = array_merge($result, $products->toArray());
-        }
+        $result['woman'] = Product::where('category_id', $categoryWoman->id)
+            ->limit($count)
+            ->get();
 
         return $result;
     }
