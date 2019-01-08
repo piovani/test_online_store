@@ -5,7 +5,7 @@
       v-flex(xs3 md2)
         ToolbarAdminSide
       v-flex(xs11 md12)
-        v-card
+        v-card(flat)
           v-layout(row)
             v-flex(xs6)
               v-btn(
@@ -43,6 +43,7 @@
                 v-text-field(
                   solo
                   required
+                  maxlength="255"
                   label="Product name"
                   v-model="product.name"
                   :rules="rules.ruleRequired"
@@ -50,6 +51,7 @@
                 v-text-field(
                   solo
                   required
+                  maxlength="255"
                   label="Product sub name"
                   v-model="product.subName"
                   :rules="rules.ruleRequired"
@@ -58,9 +60,10 @@
                   solo
                   required
                   label="Price"
-                  maxlength="13"
+                  maxlength="10"
                   v-model="product.price"
                   :rules="rules.ruleRequired"
+                  v-money="money"
                 )
                 v-spacer
                 v-textarea(
@@ -80,12 +83,14 @@ import ProductAdminService from './ProductAdminService'
 import ToolbarAdminTop from '../Toolbar/ToolbarAdminTop'
 import ToolbarAdminSide from '../Toolbar/ToolbarAdminSide'
 import ModalImport from './importCSV/ModalImportCSV'
+import { Money } from 'v-money'
 
 export default {
   components: {
     ToolbarAdminTop,
     ToolbarAdminSide,
-    ModalImport
+    ModalImport,
+    Money
   },
   created () {
     this.setId()
@@ -104,6 +109,14 @@ export default {
       subName: '',
       price: '',
       description: ''
+    },
+    money: {
+      decimal: ',',
+      thousands: '.',
+      prefix: 'R$ ',
+      suffix: ' #',
+      precision: 2,
+      masked: false
     }
   }),
   methods: {

@@ -32,7 +32,7 @@ export default {
         image1: ''
       })
     }
-  },
+  }
 }
 </script>
 
