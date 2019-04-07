@@ -14,4 +14,9 @@ class Product extends Model
         'deleted_at'
     ];
 
+    public function category()
+    {
+        return $this->hasOne('Category');
+    }
+
 }
